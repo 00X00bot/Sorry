@@ -6,7 +6,7 @@ const baseApiUrl = async () => {
 };
 
 module.exports.config = {
-  name: "pio",
+  name: "sim",
   version: "6.9.9",
   credits: "dipto",
   cooldowns: 0,
@@ -14,8 +14,8 @@ module.exports.config = {
   description: "better than all sim simi",
   commandCategory: "chat",
   category: "chat",
-  usePrefix: false,
-  prefix: false,
+  usePrefix: true,
+  prefix: true,
   usages: `[anyMessage] OR\nteach [YourMessage] - [Reply1], [Reply2], [Reply3]... OR\nteach [react] [YourMessage] - [react1], [react2], [react3]... OR\nremove [YourMessage] OR\nrm [YourMessage] - [indexNumber] OR\nmsg [YourMessage] OR\nlist OR\nall OR\nedit [YourMessage] - [NewMessage]`,
 };
 
@@ -150,10 +150,10 @@ try{
 module.exports.handleEvent = async function ({ api, event }) {
 try{
     const body = event.body ? event.body.toLowerCase() : ""
-    if(body.startsWith("bot") || body.startsWith("bby") || body.startsWith("baby") || body.startsWith("Hlw") || body.startsWith("bye") || body.startsWith("janu") || body.startsWith("hilu") || body.startsWith("thank you") || body.startsWith("hi iam new") || body.startsWith("thanks")){
+    if(body.startsWith("bot") || body.startsWith("bby") || body.startsWith("baby") || body.startsWith("hlw") || body.startsWith("bye") || body.startsWith("janu") || body.startsWith("spider") || body.startsWith("thank you") || body.startsWith("hi iam new") || body.startsWith("thanks")){
         const arr = body.replace(/^\S+\s*/, "")
       if(!arr) {
-      	const tanvir = ["তোমাকে আমার ভাল্লাগে🥹🫰", "আসো উমম্মাহহহহহ্ দেই💋😽", "চল যাইগা পাট ক্ষেতে🙂", " তোমার অলিতে গলিতে উমম্ম*আহ্😘", "Hey Baby🥹", "kemon acho baby😌"];
+      	const tanvir = ["ami ekhane 🫰👀", "tumi naki amake valobaso na☹️", "hello pakhii 😩🥹", "আসো চুম্মা দেই🙃🫰", "tumi amake	vhule gecho🫠", "🖐️ present"];
           const tamim = tanvir[Math.floor(Math.random() * tanvir.length)];
                                      await api.sendMessage(tamim, event.threadID, (error, info) => {
           global.client.handleReply.push({
