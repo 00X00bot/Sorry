@@ -10,7 +10,7 @@ const baseApiUrl = async () => {
 module.exports.config = {
   name: "tiktokid",
   version: "6.9.0",
-  hasPermssion: 0,
+  permission: 0,
   credits: "dipto",
   description: "Displays TikTok video for selection.",
   usePrefix: true,
