@@ -1,0 +1,28 @@
+{
+  "author": "ryuko",
+  "language": "english",
+  "allowinbox": false,
+  "adminonly": true,
+  "autocreatedb": true,
+  "approval": false,
+  "premium": false,
+  "email": "serverbot81@gmail.com",
+  "adminpass": "TANVIR-143",
+  "prefix": ".",
+  "operators": [
+    "100032407831557"
+  ],
+  "admins": [
+"100032407831557"
+],
+  "haspremiumcmd": [],
+  "approvedgroups": [],
+  "disabledcmds": [],
+  "disabledevnts": [],
+  "bots": [],
+  "database": {
+    "sqlite": {
+      "storage": "botdata/database.sqlite"
+    }
+  }
+}
