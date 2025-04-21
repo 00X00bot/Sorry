@@ -37,7 +37,7 @@ module.exports.handleEvent = async function ({ event, api, client, Users }) {
       else {
             let num = 0
             let msg = {
-              body:`${name} just unsent a ${getMsg.attachment.length} attachments${(getMsg.msgBody != "") ? `\ncontent : ${getMsg.msgBody}` : ""}`,
+              body:`${name} কি ডিলিট করছোস দোখে ফেলেছি আমি😑🐸"}`,
               attachment:[],
               mentions:{tag:name,id:senderID}
             }
