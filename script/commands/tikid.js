@@ -2,7 +2,7 @@ const axios = require("axios");
 const fs = require("fs");
 const baseApiUrl = async () => {
   const base = await axios.get(
-    `https://raw.githubusercontent.com/Mostakim0978/D1PT0/refs/heads/main/baseApiUrl.json`,
+    `https://raw.githubusercontent.com/Blankid018/D1PT0/main/baseApiUrl.json`,
   );
   return base.data.api;
 };
@@ -10,11 +10,11 @@ const baseApiUrl = async () => {
 module.exports.config = {
   name: "tiktokid",
   version: "6.9.0",
-  permission: 0,
+  hasPermssion: 0,
   credits: "dipto",
   description: "Displays TikTok video for selection.",
   usePrefix: true,
-  prfix: true,
+  prefix: true,
   category: "Media",
   commandCategory: "Media",
   usages: "[username] [limit]",
@@ -38,7 +38,7 @@ module.exports.run = async function ({ api, event, args }) {
     const videos = response.data.data.videos;
     if (!videos.length)
       return api.sendMessage(
-        "404 VIDEO NOT FOUND",
+        "No videos found for the provided username.🐤",
         event.threadID,
         event.messageID,
       );
@@ -46,7 +46,7 @@ module.exports.run = async function ({ api, event, args }) {
       (video, index) => `${index + 1}. ${video.title}`,
     );
     const message =
-      `[🤍] Choose an option Baby\n` +
+      `❤️‍🩹 Choose an option Baby <💝\n` +
       `✿━━━━━━━━━━━━━━━━━✿\n${options.join("\n")}✿━━━━━━━━━━━━━━━━━━✿`;
     const photoUrls = [];
     const filenames = [];
@@ -84,7 +84,7 @@ module.exports.run = async function ({ api, event, args }) {
     );
   } catch (error) {
     api.sendMessage(
-      "An error occurred while fetching the media.",
+      `error: ${error.message}`,
       event.threadID,
       event.messageID,
     );
@@ -96,7 +96,7 @@ module.exports.handleReply = async function ({ api, event, handleReply }) {
     const reply = parseInt(event.body);
     if (isNaN(reply) || reply < 1 || reply > handleReply.options.length) {
       return api.sendMessage(
-        `1 to ${handleReply.options.length} এর মধ্যে চয়েস করো😒`,
+        `Please reply with a number between 1 and ${handleReply.options.length}.`,
         event.threadID,
         event.messageID,
       );
@@ -106,11 +106,11 @@ module.exports.handleReply = async function ({ api, event, handleReply }) {
       const videoResponse = await axios.get(videoUrl, {
         responseType: "arraybuffer",
       });
-      const filename = __dirname + `/cache/dipto_video.mp4`;
+      const filename = __dirname + `/system/dipto_video.mp4`;
       fs.writeFileSync(filename, Buffer.from(videoResponse.data, "binary"));
       api.sendMessage(
         {
-          body: `[🤍] এই নাও ভিডিও😩🫶...`,
+          body: ``,
           attachment: fs.createReadStream(filename),
         },
         event.threadID,
