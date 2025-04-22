@@ -9,6 +9,7 @@
   "author": "ryuko",
   "license": "ISC",
   "dependencies": {
+    "@ybd-project/ytdl-core": "^6.0.8",
     "aes-js": "^3.1.2",
     "axios": "^1.7.9",
     "bluebird": "^3.7.2",
