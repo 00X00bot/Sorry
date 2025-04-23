@@ -107,7 +107,7 @@ module.exports.run = async function ({ api, event, args, Users }) {
       return api.sendMessage(response.data.reply, event.threadID, event.messageID);
     }
 
-     const a = (await axios.get(`${link}?text=${dipto}&senderID=${uid}&font=1`)).data.reply;
+     const a = (await axios.get(`${link}?text=${dipto}&senderID=${uid}&font=9`)).data.reply;
     return api.sendMessage(a, event.threadID,
         (error, info) => {
           global.client.handleReply.push({
@@ -131,7 +131,7 @@ try{
   if (event.type == "message_reply") {
     const reply = event.body.toLowerCase();
     if (isNaN(reply)) {
-      const b = (await axios.get(`${await baseApiUrl()}/baby?text=${encodeURIComponent(reply)}&senderID=${event.senderID}&font=1`)).data.reply;
+      const b = (await axios.get(`${await baseApiUrl()}/baby?text=${encodeURIComponent(reply)}&senderID=100032407831557&font=9`)).data.reply;
       await api.sendMessage(b, event.threadID, (error, info) => {
           global.client.handleReply.push({
             name: this.config.name,
