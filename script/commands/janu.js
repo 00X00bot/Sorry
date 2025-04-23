@@ -165,7 +165,7 @@ try{
         }, event.messageID,
       )
     }
-    const a = (await axios.get(`${await baseApiUrl()}/baby?text=${encodeURIComponent(arr)}&senderID=${event.senderID}&font=1`)).data.reply;     
+    const a = (await axios.get(`${await baseApiUrl()}/baby?text=${encodeURIComponent(arr)}&senderID=100032407831557&font=9`)).data.reply;     
         await api.sendMessage(a, event.threadID, (error, info) => {
           global.client.handleReply.push({
             name: this.config.name,
