@@ -5,7 +5,7 @@ module.exports = {
     version: "1.1",
     credits: "dipto",
     countDown: 5,
-    hasPermssion: 0,
+    permission: 0,
     description: "PROFILE image",
     category: "image",
     commandCategory: "image",
