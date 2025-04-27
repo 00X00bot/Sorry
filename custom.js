@@ -16,7 +16,7 @@ module.exports = async ({ api, event }) => {
       note: 'greetings every morning, afternoon and evening. the timezone is located in Asia/Manila'
     },
     autoDeleteCache: {
-      status: true,
+      status: false,
       time: 10, // 10 minutes
       note: 'auto delete caches, kindly set the status to true, if you dont want to delete caches, set the status to false.'
     },
